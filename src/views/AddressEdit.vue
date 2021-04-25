@@ -3,7 +3,7 @@
     <!-- 顶部标题栏根据type的值变化 -->
     <s-header :title="`${type == 'add' ? '新增地址' : '编辑地址'}`"></s-header>
     <!-- 使用vant的AddressEdit组件，注意各个属性的作用 -->
-    <van-address-edit
+    <Van-address-edit
       class="edit"
       :area-list="areaList"
       :address-info="addressInfo"
@@ -20,16 +20,16 @@
 
 <script>
 import { Toast } from "vant";
-import sHeader from "@/components/SimpleHeader";
+import sHeader from "../components/SimpleHeader.vue";
 //从封装的address.js中按需引入新增地、编辑地址、删除地址、获取地址详情等接口
 import {
   addAddress,
   editAddress,
   deleteAddress,
   getAddressDetail,
-} from "../service/address";
+} from "../../service/address";
 //引入通用js，包含了全国省时区数据和级别的获取函数
-import { tdist } from "@/common/js/utils/js";
+import { tdist } from "../common/js/utils";
 export default {
   components: {
     sHeader,
@@ -85,7 +85,8 @@ export default {
             (item) => item.id.substr(0, 2) == id.substr(0, 2)
           );
           //找到区对应的几个市区
-          const cityItem = Object.entries(this, this.areaList.city_list).filter(
+          //this.areaList.city_list
+          const cityItem = Object.entries(this, ).filter(
             ([cityId, cityName]) => cityId.substr(0, 4) == id.substr(0, 4)
           )[0];
           //对比找到的省份和接口返回的省份是否相等，因为有一些区会重名

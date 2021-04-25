@@ -2,7 +2,7 @@
   <div class="address-box">
       <s-header :title="'地址管理'" :back="'/user'"></s-header>
       <div class="address-item">
-          <van-address-list
+          <Van-address-list
           v-if="from != 'mine'"
           :list="list"
           default-tag-text="默认"
@@ -10,22 +10,22 @@
           @edit="onEdit"
           @select="select"
           />
-          <van-address-list
+          <!-- <Van-address-list
           v-else
           v-model="chosenAddressId"
           :list="list"
           default-tag-text="默认"
           @add="onAdd"
           @edit="onEdit"
-          />
+          /> -->
       </div>
   </div>
 </template>
 
 <script>
 import { Toast } from "vant";
-import sHeader from "@/components/SimpleHeader";
-import { getAddressList } from "../service/address";
+import sHeader from "../components/SimpleHeader.vue";
+import { getAddressList } from "../../service/address";
 export default {
     components: {
         sHeader,

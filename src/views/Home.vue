@@ -93,12 +93,13 @@
 <script>
 import { getLocal } from "../common/js/utils";
 import swiper from "../components/Swiper.vue";
-import { getHome } from "../../service/home";
+import { getHome } from "../service/home";
 import { Toast } from "vant";
 export default {
   name: "Home",
   data() {
     return {
+      headerScroll:false,
       isLogin: false,
       swiperList: [],
       categoryList: [
@@ -117,13 +118,31 @@ export default {
   },
   components: { swiper },
   async mounted() {
+    window.addEventListener("scroll",this.pageScroll);
     const token = getLocal("token");
     if (token) {
       this.isLogin = true;
     }
-    Toast.loading({ message: "加载中...", forbidClick: true });
+    Toast.loading({ 
+      message: "加载中...", 
+      forbidClick: true 
+      });
     const { data } = await getHome();
-    this.swiperList = data.carousels;
+    this.swiperList = data.carousels; //轮播图
+    this.swiperList = data.hotGoods; //热门商品
+    this.newGoods = data.newGoods; //新品上线
+    this.recommendGoods = data.recommendGoods; //最新推荐
+  },
+  methods: {
+    pageScroll() {
+      let scrollTop =
+      window.pageYOffset ||
+      document.documentElement.scrollTop ||
+      document.body.scrollTop;
+      scrollTop > 100
+      ? (this.headerScroll = true)
+      : (this.headerScroll = false);
+    },
   },
 };
 </script>

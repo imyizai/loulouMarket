@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import sHeader from "../components/SimpleHeader.vue";
+import sHeader from "@/components/SimpleHeader";
 export default { 
   name: "Detail",
    components: { 

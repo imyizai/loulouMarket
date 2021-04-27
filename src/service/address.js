@@ -1,4 +1,4 @@
-import axios from '../src/utils/axios'
+import axios from '../utils/axios'
 
 export function addAddress (params) {
     return axios.post('/address',params)

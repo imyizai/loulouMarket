@@ -20,7 +20,7 @@
 
 <script>
 import { Toast } from "vant";
-import sHeader from "../components/SimpleHeader.vue";
+import sHeader from "@/components/SimpleHeader.vue";
 //从封装的address.js中按需引入新增地、编辑地址、删除地址、获取地址详情等接口
 import {
   addAddress,
@@ -29,7 +29,7 @@ import {
   getAddressDetail,
 } from "../../service/address";
 //引入通用js，包含了全国省时区数据和级别的获取函数
-import { tdist } from "../common/js/utils";
+import { tdist } from "@/common/js/utils";
 export default {
   components: {
     sHeader,

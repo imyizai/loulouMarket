@@ -1,6 +1,6 @@
-import Vue from "vue";
-import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
+import Vue from "vue"
+import VueRouter from "vue-router"
+import Home from "../views/Home.vue"
 
 Vue.use(VueRouter);
 
@@ -50,6 +50,14 @@ const routes = [
     path: "/detail",
     name: "detail",
     component: () =>import(/* webpackChunkName: "detail" */ "../views/Detail.vue" ),
+    meta: {
+      index: 2,
+    },
+  },
+  {
+    path: "/login",
+    name: "login",
+    component: () =>import(/* webpackChunkName: "login" */ "../views/Login.vue" ),
     meta: {
       index: 2,
     },

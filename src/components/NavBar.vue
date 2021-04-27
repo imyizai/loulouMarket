@@ -2,7 +2,7 @@
   <div class="nav-bar">
     <ul class="nav-list">
       <router-link tag="li" class="nav-list-item active" to="home">
-        <i class="iconfont icon-shouye"></i>
+        <i class="iconfont icon-home"></i>
         <span>首页</span>
       </router-link>
       <router-link tag="li" class="nav-list-item" to="category">
@@ -10,18 +10,21 @@
         <span>分类</span>
       </router-link>
       <router-link tag="li" class="nav-list-item" to="cart">
-        <i class="iconfont icon-che"></i>
+        <i class="iconfont icon-cart"></i>
         <span>购物车</span>
       </router-link>
       <router-link tag="li" class="nav-list-item" to="user">
-        <i class="iconfont icon-wode"></i>
+        <i class="iconfont icon-user"></i>
         <span>我的</span>
       </router-link>
     </ul>
   </div>
-</template><script>
+</template>
+
+<script>
 export default {};
 </script>
+
 <style lang="less" scoped>
 @import "../common/style/mixin";
 .nav-bar {
@@ -58,4 +61,4 @@ export default {};
     }
   }
 }
-</style>    
+</style>

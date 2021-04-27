@@ -20,16 +20,16 @@
 
 <script>
 import { Toast } from "vant";
-import sHeader from "@/components/SimpleHeader.vue";
+import sHeader from "../components/SimpleHeader.vue";
 //从封装的address.js中按需引入新增地、编辑地址、删除地址、获取地址详情等接口
 import {
   addAddress,
   editAddress,
   deleteAddress,
   getAddressDetail,
-} from "../../service/address";
+} from "../service/address";
 //引入通用js，包含了全国省时区数据和级别的获取函数
-import { tdist } from "@/common/js/utils";
+import { tdist } from "../common/js/utils";
 export default {
   components: {
     sHeader,
@@ -140,11 +140,11 @@ export default {
     async onDelete() {
       //调用删除地址接口
       const res = await deleteAddress(this.addressId);
-      if (res.message === "SUCCESS") {
-        Toast("删除成功");
-      } else {
-        Toast("删除失败");
-      }
+      // if (res.message === "SUCCESS") {
+      //   Toast("删除成功");
+      // } else {
+      //   Toast("删除失败");
+      // }
       setTimeout(() => {
         this.$router.push({ path: "address" });
       }, 1000);

@@ -3,7 +3,7 @@
     <s-header :title="'我的'"></s-header>
     <div class="user-info">
       <div class="info">
-        <!-- <img src="../assets/me.jpg" /> -->
+        <img src="../assets/yz.jpg" />
         <div class="user-desc">
           <span>昵称：{{ user.nickName }}</span>
           <span>登录名：{{ user.loginName }}</span>
@@ -11,21 +11,21 @@
         </div>
       </div>
     </div>
-    <van-grid :column-num="2">
-      <van-grid-item @click="goTo('order')" icon="orders-o" text="我的订单" />
-      <van-grid-item @click="goTo('setting')" icon="user-o" text="账号管理" />
-      <van-grid-item
+    <Van-grid :column-num="2">
+      <Van-grid-item @click="goTo('order')" icon="orders-o" text="我的订单" />
+      <Van-grid-item @click="goTo('setting')" icon="user-o" text="账号管理" />
+      <Van-grid-item
         @click="goTo('address?from=mine')"
         icon="location-o"
         text="地址管理"
       />
-      <van-grid-item @click="goTo('about')" icon="friends-o" text="关于我们" />
+      <Van-grid-item @click="goTo('about')" icon="friends-o" text="关于我们" />
     </van-grid>
   </div>
 </template>
 
 <script>
-import sHeader from "@/components/SimpleHeader";
+import sHeader from "../components/SimpleHeader.vue";
 import { getUserInfo } from "../service/user";
 export default {
   name: "User",
